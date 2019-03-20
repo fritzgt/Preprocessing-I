@@ -133,6 +133,7 @@ table {
 html,
 body {
   height: 100%;
+  line-height: 1.5;
 }
 nav {
   display: flex;
@@ -149,9 +150,54 @@ nav a:hover {
 }
 .main-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   height: 800px;
   padding: 30px;
-  background-color: lightgray;
+  background-color: #e9ecef;
   margin: 0 auto;
+}
+.main-container h1 {
+  padding: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+#main-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.skills {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  padding: 30px;
+  margin: 0 auto;
+}
+.skills h2 {
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  padding: 50px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+table td,
+table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+table tr:nth-child(even) {
+  background-color: #dddddd;
+}
+footer {
+  padding: 50px;
+  text-align: center;
+  background-color: #e9ecef;
 }
