@@ -134,3 +134,24 @@ html,
 body {
   height: 100%;
 }
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+nav a {
+  margin: 0 40px;
+  text-decoration: none;
+  color: gray;
+}
+nav a:hover {
+  color: red;
+}
+.main-container {
+  width: 100%;
+  max-width: 800px;
+  height: 800px;
+  padding: 30px;
+  background-color: lightgray;
+  margin: 0 auto;
+}
