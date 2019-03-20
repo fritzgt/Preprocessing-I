@@ -136,23 +136,42 @@ body {
   line-height: 1.5;
   font-family: "Work Sans", sans-serif;
 }
-nav {
+header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
 }
-nav a {
+header nav a {
   margin: 0 40px;
   text-decoration: none;
   color: gray;
 }
-nav a:hover {
+header nav a:hover {
   color: red;
+}
+@media only screen and (max-width: 500px) {
+  header nav a {
+    border-bottom: 1px solid gray;
+    width: 500px;
+    text-align: center;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  header nav {
+    flex-flow: column;
+  }
 }
 .main-container {
   width: 100%;
   max-width: 900px;
-  height: 900px;
+  height: auto;
   padding: 30px;
   background-color: #e9ecef;
   margin: 0 auto;
@@ -204,8 +223,18 @@ table th {
   text-align: left;
   padding: 8px;
 }
+@media only screen and (max-width: 500px) {
+  table {
+    padding: 10px 0;
+  }
+}
 footer {
   padding: 50px;
   text-align: center;
   background-color: #e9ecef;
+}
+@media only screen and (max-width: 500px) {
+  footer {
+    padding: 10px 0;
+  }
 }

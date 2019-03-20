@@ -135,9 +135,24 @@ table {
 @alert: red;
 @button-color: #f95659;
 @font-color: white;
-
 @font-stack: "Work Sans", sans-serif;
+@mobile: 500px;
 
+// Mixins
+
+.position-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-center() {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+}
+
+// main styles
 * {
   box-sizing: border-box;
 }
@@ -150,27 +165,37 @@ body {
 }
 
 //header
-nav {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px;
+header {
+  .position-center();
 
-  a {
-    margin: 0 40px;
-    text-decoration: none;
-    color: @nav-color;
+  nav {
+    .position-center();
+    padding: 20px;
 
-    &:hover {
-      color: @alert;
+    a {
+      margin: 0 40px;
+      text-decoration: none;
+      color: @nav-color;
+
+      &:hover {
+        color: @alert;
+      }
+      @media only screen and (max-width: @mobile) {
+        border-bottom: 1px solid gray;
+        width: @mobile;
+        text-align: center;
+        padding: 10px;
+      }
+    } //anchor
+    @media only screen and (max-width: @mobile) {
+      flex-flow: column;
     }
-  }
-}
+  } //nav
+} //container
 
 // Main continer
 .main-container {
-  width: 100%;
-  max-width: 900px;
-  height: 900px;
+  .container-center();
   padding: 30px;
   background-color: @background-container;
   margin: 0 auto;
@@ -198,9 +223,7 @@ nav {
 // skills section
 
 .skills {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
+  .container-center();
   padding: 30px;
   margin: 0 auto;
   h2 {
@@ -212,9 +235,7 @@ nav {
 
 // work history
 table {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
+  .container-center();
   padding: 50px;
   margin: 0 auto;
   border-collapse: collapse;
@@ -230,10 +251,18 @@ table {
     text-align: left;
     padding: 8px;
   }
+
+  @media only screen and (max-width: @mobile) {
+    padding: 10px 0;
+  }
 }
 
 footer {
   padding: 50px;
   text-align: center;
   background-color: @background-container;
+
+  @media only screen and (max-width: @mobile) {
+    padding: 10px 0;
+  }
 }
