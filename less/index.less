@@ -130,7 +130,14 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
-@background-theme: #e9ecef;
+@background-container: #e9ecef;
+@nav-color: gray;
+@alert: red;
+@button-color: #f95659;
+@font-color: white;
+
+@font-stack: "Work Sans", sans-serif;
+
 * {
   box-sizing: border-box;
 }
@@ -139,8 +146,10 @@ html,
 body {
   height: 100%;
   line-height: 1.5;
+  font-family: @font-stack;
 }
 
+//header
 nav {
   display: flex;
   justify-content: flex-end;
@@ -149,35 +158,44 @@ nav {
   a {
     margin: 0 40px;
     text-decoration: none;
-    color: gray;
+    color: @nav-color;
 
     &:hover {
-      color: red;
+      color: @alert;
     }
   }
 }
 
+// Main continer
 .main-container {
   width: 100%;
   max-width: 900px;
-  height: 800px;
+  height: 900px;
   padding: 30px;
-  background-color: @background-theme;
+  background-color: @background-container;
   margin: 0 auto;
+
+  #main-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
   h1 {
     padding: 20px 0;
     font-size: 20px;
     font-weight: bold;
   }
+  button {
+    margin: 40px 0;
+    background-color: @button-color;
+    color: @font-color;
+    padding: 10px;
+    font-size: 18px;
+  }
 }
 
 // skills section
-
-#main-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
 .skills {
   width: 100%;
@@ -201,20 +219,21 @@ table {
   margin: 0 auto;
   border-collapse: collapse;
   margin-bottom: 50px;
-  td,
-  th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+
+  #title-table {
+    background-color: @background-container;
   }
 
-  tr:nth-child(even) {
-    background-color: #dddddd;
+  td,
+  th {
+    border: 1px solid @nav-color;
+    text-align: left;
+    padding: 8px;
   }
 }
 
 footer {
   padding: 50px;
   text-align: center;
-  background-color: @background-theme;
+  background-color: @background-container;
 }

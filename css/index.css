@@ -134,6 +134,7 @@ html,
 body {
   height: 100%;
   line-height: 1.5;
+  font-family: "Work Sans", sans-serif;
 }
 nav {
   display: flex;
@@ -151,20 +152,27 @@ nav a:hover {
 .main-container {
   width: 100%;
   max-width: 900px;
-  height: 800px;
+  height: 900px;
   padding: 30px;
   background-color: #e9ecef;
   margin: 0 auto;
+}
+.main-container #main-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 .main-container h1 {
   padding: 20px 0;
   font-size: 20px;
   font-weight: bold;
 }
-#main-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.main-container button {
+  margin: 40px 0;
+  background-color: #f95659;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
 }
 .skills {
   width: 100%;
@@ -187,14 +195,14 @@ table {
   border-collapse: collapse;
   margin-bottom: 50px;
 }
+table #title-table {
+  background-color: #e9ecef;
+}
 table td,
 table th {
-  border: 1px solid #dddddd;
+  border: 1px solid gray;
   text-align: left;
   padding: 8px;
-}
-table tr:nth-child(even) {
-  background-color: #dddddd;
 }
 footer {
   padding: 50px;
