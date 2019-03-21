@@ -4,56 +4,265 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+@background-container: #e9ecef;
+@nav-color: gray;
+@alert: red;
+@button-color: #f95659;
+@font-color: white;
+@font-stack: "Work Sans", sans-serif;
+@mobile: 500px;
+
+// Mixins
+
+.position-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-center() {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+}
+
+// main styles
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  line-height: 1.5;
+  font-family: @font-stack;
 }
 
+//header
+header {
+  .position-center();
+
+  nav {
+    .position-center();
+    padding: 20px;
+
+    a {
+      margin: 0 40px;
+      text-decoration: none;
+      color: @nav-color;
+
+      &:hover {
+        color: @alert;
+      }
+      @media only screen and (max-width: @mobile) {
+        border-bottom: 1px solid gray;
+        width: @mobile;
+        text-align: center;
+        padding: 10px;
+      }
+    } //anchor
+    @media only screen and (max-width: @mobile) {
+      flex-flow: column;
+    }
+  } //nav
+} //container
+
+// Main continer
+.main-container {
+  .container-center();
+  padding: 30px;
+  background-color: @background-container;
+  margin: 0 auto;
+
+  #main-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  h1 {
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  button {
+    margin: 40px 0;
+    background-color: @button-color;
+    color: @font-color;
+    padding: 10px;
+    font-size: 18px;
+  }
+}
+
+// skills section
+
+.skills {
+  .container-center();
+  padding: 30px;
+  margin: 0 auto;
+  h2 {
+    padding: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+// work history
+table {
+  .container-center();
+  padding: 50px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+
+  #title-table {
+    background-color: @background-container;
+  }
+
+  td,
+  th {
+    border: 1px solid @nav-color;
+    text-align: left;
+    padding: 8px;
+  }
+
+  @media only screen and (max-width: @mobile) {
+    padding: 10px 0;
+  }
+}
+
+footer {
+  padding: 50px;
+  text-align: center;
+  background-color: @background-container;
+
+  @media only screen and (max-width: @mobile) {
+    padding: 10px 0;
+  }
+}
